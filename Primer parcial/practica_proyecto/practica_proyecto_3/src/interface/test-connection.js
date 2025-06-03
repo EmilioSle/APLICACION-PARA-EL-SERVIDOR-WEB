@@ -9,18 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const Sensor_1 = require("../domain/entities/Sensor");
-const data_source_1 = require("../data-source");
-const router = (0, express_1.Router)();
-const repo = data_source_1.AppDataSource.getRepository(Sensor_1.SensorEntity);
-router.get("/", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const sensors = yield repo.find();
-    res.json(sensors);
-}));
-router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const newSensor = repo.create(req.body);
-    const result = yield repo.save(newSensor);
-    res.status(201).json(result);
-}));
-exports.default = router;
+const pg_1 = require("pg");
+function testConnection() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const client = new pg_1.Client({
+            user: "postgres",
+            host: "localhost",
+            database: "sensorcapas",
+            password: "hola12345",
+            port: 5433,
+        });
+        try {
+            yield client.connect();
+            console.log("Conectado correctamente");
+        }
+        catch (error) {
+            console.error("Error al conectar:", error);
+        }
+        finally {
+            yield client.end();
+        }
+    });
+}
+testConnection();

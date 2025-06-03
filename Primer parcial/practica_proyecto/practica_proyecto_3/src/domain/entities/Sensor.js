@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorEntity = void 0;
-// src/domain/entities/Sensor.ts
 const typeorm_1 = require("typeorm");
 let SensorEntity = class SensorEntity {
 };

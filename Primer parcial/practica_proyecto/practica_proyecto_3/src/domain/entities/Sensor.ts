@@ -1,4 +1,4 @@
-// src/domain/entities/Sensor.ts
+
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
@@ -15,3 +15,4 @@ export class SensorEntity {
   @Column()
   timestamp!: Date;
 }
+
