@@ -34,6 +34,7 @@ Instala dependencias:
 npm install
 
 Configura la base de datos:
+![conexion a la base de datos](./imagen/image.png)
 Edita el archivo src/interface/data-source.ts con tus credenciales:
 
 
@@ -47,6 +48,7 @@ const AppDataSource = new DataSource({
   synchronize: true,
   entities: [SensorEntity],
 });
+
 También puedes usar .env con dotenv si prefieres variables de entorno.
 
 Compila TypeScript:
