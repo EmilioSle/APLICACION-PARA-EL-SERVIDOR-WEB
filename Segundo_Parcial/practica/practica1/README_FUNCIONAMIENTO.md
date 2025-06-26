@@ -26,6 +26,15 @@ npm install
 ```
 
 ---
+## ✅ Dependencias necesarias para tu proyecto
+
+    npm install @nestjs/typeorm typeorm sqlite3
+    npm install class-validator class-transformer
+    npm install @nestjs/swagger swagger-ui-express
+
+```
+
+---
 
 ## ▶️ Uso
 
@@ -94,10 +103,8 @@ npm run test:cov
 | Recurso       | Método HTTP | Descripción                      |
 |---------------|-------------|----------------------------------|
 | `/sensor`     | GET         | Obtener todos los sensores       |
-
-
-
-
+Primero hay que hacer un post para poder obtener 
+![se obtiene todos los sensores](../practica1/pruebas_imagenes/sensor_get.png)
 
 | `/sensor`     | POST        | Crear un nuevo sensor            |
 Ejemplo de json
@@ -107,32 +114,27 @@ Ejemplo de json
     }
 ![Como se escribe el json](../practica1/pruebas_imagenes/sensor_post.png)
 
-
-
-
-
 | `/sensor/:id` | GET         | Obtener un sensor por ID         |
+Tambien se puede obtener sensor por ID
+![Como se obtiene sensor por ID](../practica1/pruebas_imagenes/sensor_get_id.png)
+
 | `/sensor/:id` | PATCH       | Actualizar un sensor por ID      |
+Para Actualizar se necesita el ID
+![Actualizar sensor por ID](../practica1/pruebas_imagenes/sensor_patch_ID.png)
+
 | `/sensor/:id` | DELETE      | Eliminar un sensor por ID        |
-| `/lectura`    | GET         | Obtener todas las lecturas       |
-| `/lectura`    | POST        | Crear una nueva lectura          |
-| `/lectura/:id`| GET         | Obtener una lectura por ID       |
-| `/lectura/:id`| PATCH       | Actualizar una lectura por ID    |
-| `/lectura/:id`| DELETE      | Eliminar una lectura por ID      |
-| `/ubicacion`  | GET         | Obtener todas las ubicaciones    |
-| `/ubicacion`  | POST        | Crear una nueva ubicación        |
-| `/ubicacion/:id` | GET      | Obtener una ubicación por ID     |
-| `/ubicacion/:id` | PATCH    | Actualizar una ubicación por ID  |
-| `/ubicacion/:id` | DELETE   | Eliminar una ubicación por ID    |
+Para Eliminar se necesita el ID
+![Para Eliminar el sensor](../practica1/pruebas_imagenes/sensor_delete_ID.png)
+
+Asi mismo con el resto de los endpoint
 
 ---
 
-## 👨‍💻 Autor y licencia
+## 👨‍💻 Autor
 
-Este proyecto fue desarrollado por **Emilio Cardenas**.  
+Autor: **Emilio Cardenas**.  
 Repositorio original: [https://github.com/EmilioSle/APLICACION-PARA-EL-SERVIDOR-WEB](https://github.com/EmilioSle/APLICACION-PARA-EL-SERVIDOR-WEB)
 
-Licencia MIT - consulta el archivo `LICENSE` para más detalles.
 
 ---
 
