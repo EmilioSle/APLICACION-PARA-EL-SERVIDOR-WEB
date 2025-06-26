@@ -32,19 +32,15 @@ npm install
     npm install class-validator class-transformer
     npm install @nestjs/swagger swagger-ui-express
 
-```
-
 ---
-
 ## ▶️ Uso
 
 Ejecuta la aplicación en modo desarrollo:
 
-```bash
-npm run start:dev
-```
-
-La API estará disponible en: [http://localhost:3000](http://localhost:3000)
+    ```bash
+    npm run start:dev
+    ```
+    La API estará disponible en: [http://localhost:3000](http://localhost:3000)
 
 ---
 
