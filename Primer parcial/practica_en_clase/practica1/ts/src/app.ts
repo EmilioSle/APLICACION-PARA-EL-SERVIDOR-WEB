@@ -6,7 +6,7 @@ console.log(a+" "+b+" "+c)
 const alumno:Ialumno ={
     ID:1,
     NOMBRE:"JESUS",
-    CALIFICACION: 10
+    CALIFICACION: 9.5
 
 }
 console.log(alumno)
