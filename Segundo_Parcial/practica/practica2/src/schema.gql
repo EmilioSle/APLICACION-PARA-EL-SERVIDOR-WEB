@@ -1,0 +1,100 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Ubicacion {
+  id: ID!
+  nombre: String!
+  descripcion: String
+  latitud: Float!
+  longitud: Float!
+}
+
+type Lectura {
+  id: ID!
+  sensor: Sensor!
+  valor: Float!
+  fechaHora: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Sensor {
+  id: ID!
+  nombre: String!
+  tipo: String!
+  descripcion: String
+  ubicacion: Ubicacion!
+  activo: Boolean!
+  fechaRegistro: DateTime!
+  lecturas: [Lectura!]
+}
+
+type Query {
+  sensors: [Sensor!]!
+  sensor(id: Int!): Sensor!
+  lecturas: [Lectura!]!
+  lectura(id: Int!): Lectura!
+  ubicaciones: [Ubicacion!]!
+  ubicacion(id: Int!): Ubicacion!
+}
+
+type Mutation {
+  createSensor(createSensorInput: CreateSensorInput!): Sensor!
+  updateSensor(updateSensorInput: UpdateSensorInput!): Sensor!
+  removeSensor(id: Int!): Boolean!
+  createLectura(createLecturaInput: CreateLecturaInput!): Lectura!
+  updateLectura(updateLecturaInput: UpdateLecturaInput!): Lectura!
+  removeLectura(id: Int!): Boolean!
+  createUbicacion(createUbicacionInput: CreateUbicacionInput!): Ubicacion!
+  updateUbicacion(updateUbicacionInput: UpdateUbicacionInput!): Ubicacion!
+  removeUbicacion(id: Int!): Boolean!
+}
+
+input CreateSensorInput {
+  nombre: String!
+  tipo: String!
+  descripcion: String
+  ubicacionId: Int!
+  activo: Boolean! = true
+}
+
+input UpdateSensorInput {
+  nombre: String
+  tipo: String
+  descripcion: String
+  ubicacionId: Int
+  activo: Boolean = true
+  id: Int!
+}
+
+input CreateLecturaInput {
+  fechaHora: DateTime!
+  valor: Float!
+  sensorId: Int!
+}
+
+input UpdateLecturaInput {
+  fechaHora: DateTime
+  valor: Float
+  sensorId: Int
+  id: Int!
+}
+
+input CreateUbicacionInput {
+  nombre: String!
+  descripcion: String
+  latitud: Float!
+  longitud: Float!
+}
+
+input UpdateUbicacionInput {
+  nombre: String
+  descripcion: String
+  latitud: Float
+  longitud: Float
+  id: Int!
+}
