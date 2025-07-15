@@ -14,7 +14,7 @@ Clona el repositorio y navega al directorio del proyecto:
 
 ```bash
 git clone https://github.com/EmilioSle/APLICACION-PARA-EL-SERVIDOR-WEB.git
-cd APLICACION-PARA-EL-SERVIDOR-WEB/Segundo_Parcial/Clases/clase-websocket
+cd APLICACION-PARA-EL-SERVIDOR-WEB/Segundo_Parcial/practica/practica3-websocket
 npm install
 ```
 
@@ -38,15 +38,15 @@ El servidor WebSocket estará escuchando por defecto en:\
 | Evento WebSocket       | Acción                              | Payload de Ejemplo                           |
 | ---------------------- | ----------------------------------- | -------------------------------------------- |
 | `crearSensor`          | Crear un sensor                     | `{ "nombre": "S1", "tipo": "Temp" }`         |
-![se crea un sensor y se envia](../clase-websocket//Image/SensorCrear_Enviar.png)
-![se crea un sensor y se recibe](../clase-websocket//Image/SensorCrear_Recibe.png)
+[se crea un sensor y se envia](../clase-websocket//Image/SensorCrear_Enviar.png)
+[se crea un sensor y se recibe](../clase-websocket//Image/SensorCrear_Recibe.png)
 | `listarSensores`       | Listar sensores                     | *(vacío)*                                    |
 | `actualizarSensor`     | Actualizar sensor                   | `{ "id": 1, "data": { "nombre": "Nuevo" } }` |
-![se actualiza el sensor y se envia](../clase-websocket//Image/SensorActualizar_Enviar.png)
-![se actualiza el sensor y se recibe](../clase-websocket//Image/SensorActualizar_Recibe.png)
+[se actualiza el sensor y se envia](../clase-websocket//Image/SensorActualizar_Enviar.png)
+[se actualiza el sensor y se recibe](../clase-websocket//Image/SensorActualizar_Recibe.png)
 | `eliminarSensor`       | Eliminar sensor por ID              | `1`                                          |
-![se elimina el sensor y se envia](../clase-websocket//Image/SensorEliminado_Enviar.png)
-![se elimina el sensor y se recibe](../clase-websocket//Image/SensorEliminado_Recibe.png)
+[se elimina el sensor y se envia](../clase-websocket//Image/SensorEliminado_Enviar.png)
+[se elimina el sensor y se recibe](../clase-websocket//Image/SensorEliminado_Recibe.png)
 | `sensoresActualizados` | Emitido automáticamente tras cambio | *(respuesta array)*                          |
 
 ---
@@ -83,12 +83,45 @@ El servidor WebSocket estará escuchando por defecto en:\
 
 ```json
 {
-  "nombre": "Sensor PH",
-  "tipo": "pH"
+  "nombre": "Sensor A",
+  "tipo": "Humedad"
 }
 ```
 
-4. Agrega un listener para `sensoresActualizados` para ver el resultado en vivo.
+4. Para actualizar:
+   - Tipo: `actualizarSensor`
+   - Payload:
+
+```json
+{
+  "id": 1,
+  "data": {
+    "nombre": "Sensor A Modificado",
+    "tipo": "Digital"
+  }
+}
+```
+
+5. Para eliminar:
+   - Tipo: `eliminarSensor`
+   - Payload:
+
+```json
+1
+```
+
+6. Para crear una ubicación:
+   - Tipo: `crearUbicacion`
+   - Payload:
+
+```json
+{
+  "nombre": "Zona Industrial",
+  "coordenadas": "-2.14, -79.87"
+}
+```
+
+7. Agrega un listener para `sensoresActualizados`, `lecturasActualizadas` o `ubicacionesActualizadas` para ver el resultado en vivo.
 
 ---
 
