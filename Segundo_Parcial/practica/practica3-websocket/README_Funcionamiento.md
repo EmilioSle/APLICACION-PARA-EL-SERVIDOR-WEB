@@ -38,15 +38,33 @@ El servidor WebSocket estará escuchando por defecto en:\
 | Evento WebSocket       | Acción                              | Payload de Ejemplo                           |
 | ---------------------- | ----------------------------------- | -------------------------------------------- |
 | `crearSensor`          | Crear un sensor                     | `{ "nombre": "S1", "tipo": "Temp" }`         |
+
+
 [se crea un sensor y se envia](../clase-websocket//Image/SensorCrear_Enviar.png)
+
+
 [se crea un sensor y se recibe](../clase-websocket//Image/SensorCrear_Recibe.png)
+
+
 | `listarSensores`       | Listar sensores                     | *(vacío)*                                    |
 | `actualizarSensor`     | Actualizar sensor                   | `{ "id": 1, "data": { "nombre": "Nuevo" } }` |
+
+
 [se actualiza el sensor y se envia](../clase-websocket//Image/SensorActualizar_Enviar.png)
+
+
 [se actualiza el sensor y se recibe](../clase-websocket//Image/SensorActualizar_Recibe.png)
+
+
 | `eliminarSensor`       | Eliminar sensor por ID              | `1`                                          |
+
+
 [se elimina el sensor y se envia](../clase-websocket//Image/SensorEliminado_Enviar.png)
+
+
 [se elimina el sensor y se recibe](../clase-websocket//Image/SensorEliminado_Recibe.png)
+
+
 | `sensoresActualizados` | Emitido automáticamente tras cambio | *(respuesta array)*                          |
 
 ---
