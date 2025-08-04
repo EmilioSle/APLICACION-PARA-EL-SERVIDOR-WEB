@@ -1,0 +1,15 @@
+{
+  "categorias": [
+    { "id": 1, "nombre": "Pizzas", "descripcion": "Variedad de pizzas" }
+  ],
+  "productos": [
+    { "id": 1, "nombre": "Pizza Margarita", "categoriaId": 1, "precio": 120 },
+    { "id": 2, "nombre": "Pizza Pepperoni", "categoriaId": 1, "precio": 130 }
+  ],
+  "pedidos": [
+    { "id": 1, "productos": [1,2], "categoriaId": 1, "total": 250, "estado": "pendiente" }
+  ],
+  "pagos": [
+    { "id": 1, "pedidoId": 1, "monto": 250, "metodo": "tarjeta", "confirmado": true }
+  ]
+}

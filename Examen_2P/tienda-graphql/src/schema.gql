@@ -1,0 +1,72 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Categoria {
+  id: Int!
+  nombre: String!
+  descripcion: String!
+}
+
+type Producto {
+  id: Int!
+  nombre: String!
+  categoriaId: Int!
+  precio: Float!
+  categoria: Categoria
+}
+
+type Pedido {
+  id: Int!
+  productos: [Producto!]!
+  categoriaId: Int!
+  total: Float!
+  estado: String!
+}
+
+type Pago {
+  id: Int!
+  pedidoId: Int!
+  monto: Float!
+  metodo: String!
+  confirmado: Boolean!
+}
+
+type Query {
+  obtenerCategorias: [Categoria!]!
+  obtenerPedidos: [Pedido!]!
+  obtenerPagos: [Pago!]!
+  obtenerProductos: [Producto!]!
+}
+
+type Mutation {
+  crearCategoria(dto: CategoriaDto!): Categoria!
+  crearPedido(dto: PedidoDto!): Pedido!
+  crearPago(dto: PagoDto!): Pago!
+  crearProducto(dto: ProductoDto!): Producto!
+}
+
+input CategoriaDto {
+  nombre: String!
+  descripcion: String!
+}
+
+input PedidoDto {
+  productos: [Int!]!
+  categoriaId: Int!
+  total: Float!
+  estado: String!
+}
+
+input PagoDto {
+  pedidoId: Int!
+  monto: Float!
+  metodo: String!
+  confirmado: Boolean!
+}
+
+input ProductoDto {
+  nombre: String!
+  categoriaId: Int!
+  precio: Float!
+}
